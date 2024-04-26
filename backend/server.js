@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 //middleware to parse req.body
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // to parse form data (urlencoded  )
 
 app.use("/api/auth", authRoutes);
 

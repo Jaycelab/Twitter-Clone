@@ -1,4 +1,4 @@
-import User from "../models/user.model";
+import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import { generateTokenAndSetCookie } from "../lib/utils/generateToken.js";
 
@@ -13,15 +13,21 @@ export const signup = async (req, res) => {
     }
 
     //finding duplicate username
-    const existingUser = await User.findONe({ username });
+    const existingUser = await User.findOne({ username });
     if (existingUser) {
       return res.status(400).json({ error: "Username is already taken" });
     }
 
     //finding duplicate email
-    const existingEmail = await User.findONe({ email });
-    if (existingUser) {
+    const existingEmail = await User.findOne({ email });
+    if (existingEmail) {
       return res.status(400).json({ error: "Email is already taken" });
+    }
+
+    if (password.length < 6) {
+      return res
+        .status(400)
+        .json({ error: "Password must be at least 6 characters" });
     }
 
     //hashing password
