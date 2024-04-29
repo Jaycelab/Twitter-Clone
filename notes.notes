@@ -1,0 +1,7 @@
+- Following/Follwer explanation
+- FOLLOW: Two users with two ids are created as John and Jane. John is id1 and Jane is #2.
+- John follows Jane, Jane will get a follower (John) and get added to the followers array of Jane.
+- Since John now follows Jane, the id of Jane will be added to the following array of John and vice versa.
+- UNFOLLOW: If John unfollows Jane, John id will be removed from the followers array of Jane and Jane will be removed from the following array of John.
+- This applies to multiple users as well and the same logic is applied using different ids.
+- This method is applied using push and pull methods of MongoDB. Push to add and pull to remove.
