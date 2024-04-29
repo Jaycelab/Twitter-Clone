@@ -1,7 +1,7 @@
 import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 
-//next function (getMe)
+//next function (getMe). next() is called after adding user object to request
 export const protectRoute = async (req, res, next) => {
   try {
     //getting token from cookies. if !cookie but invalid handle error

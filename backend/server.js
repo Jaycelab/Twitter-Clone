@@ -10,14 +10,19 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-//middleware to parse req.body
+//middleware to parse req.body or foreign data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // to parse form data (urlencoded  )
 
+//middleware to parse cookies
 app.use(cookieParser());
 
+//if request API auth , run avaialble router methods (post, get, etc) to run
+// available function (getMe, signup, login, logout etc)
 app.use("/api/auth", authRoutes);
 
+//function connectMongoDB to connect to database once server is running
+//
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   connectMongoDB();
