@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import Notification from "../models/notification.model.js";
 
 export const getUserProfile = async (req, res) => {
   //requesting username from params
@@ -50,7 +51,8 @@ export const followUnfollowUser = async (req, res) => {
 
       //pull current user id of follower to current user array
       await User.findByIdAndUpdate(req.user._id, { $pull: { following: id } });
-      //no notifcation when unfollowing user
+      //send notification to the user
+      // TODO: returns the id of the user as a response
       res.status(200).json({ message: "User unfollowed successfully" });
     } else {
       //if user is following then unfollow using findbyidandupdate
@@ -61,20 +63,60 @@ export const followUnfollowUser = async (req, res) => {
       await User.findByIdAndUpdate(req.user._id, { $push: { following: id } });
 
       // Send notification to the user
-      /*const newNotification = new Notification({
+      const newNotification = new Notification({
         type: "follow",
         from: req.user._id,
         to: userToModify._id,
       });
 
-      await newNotification.save();*/
+      await newNotification.save();
 
+      // TODO: returns the id of the user as a respone
       res.status(200).json({ message: "User followed successfully" });
     }
 
     //error in unfollow / follow user
   } catch (error) {
     console.log("Error in followUnfollowUser: ", error.message);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+//get suggested users removing current user along with users already following
+export const getSuggestedUsers = async (req, res) => {
+  try {
+    const userID = req.user._id;
+
+    //find user by id and select following
+    const usersFollowedByMe = await User.findById(userID).select("following");
+
+    //aggregate to get users not following and not current user
+    const users = await User.aggregate([
+      {
+        $match: {
+          //not equal to current user id
+          _id: { $ne: userID },
+        },
+      },
+      //sample 10 users
+      { $sample: { size: 10 } },
+    ]);
+
+    //filter users not following and not current user
+    const filteredUsers = users.filter(
+      (user) => !usersFollowedByMe.following.includes(user._id)
+    );
+
+    //return 4 suggested users
+    const suggestedUsers = filteredUsers.slice(0, 4);
+
+    //for each user, set password to null
+    suggestedUsers.forEach((user) => (user.password = null));
+
+    res.status(200).json(suggestedUsers);
+  } catch (error) {
+    //error in getting suggested users
+    console.log("Error in getSuggestedUsers: ", error.message);
     res.status(500).json({ error: error.message });
   }
 };
