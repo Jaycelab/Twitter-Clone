@@ -1,7 +1,7 @@
 *TDL*
-- work on suggest profiles to follow
-- finish updateUser function
-- work on user notification if followed. NO notification if unfollowed
+- work on suggest profiles to follow (done)
+- finish updateUser function (done)
+- work on user notification if followed. NO notification if unfollowed (done)
 - work on user notification if liked. NO notification if unliked**
 
 *FIX*

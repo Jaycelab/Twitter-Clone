@@ -6,4 +6,7 @@
 - This applies to multiple users as well and the same logic is applied using different ids.
 - This method is applied using push and pull methods of MongoDB. Push to add and pull to remove.
 
-- Suggested users will return a list of users that are not followed by the user. This is done by finding all users that are not in the following array of the user. Users that are already followed will not be shown in the suggested users list.
+- Suggested users will return a list of users that are not followed by the user. This is done by finding all users that are not in the following array of the user. Users that are already followed will not be shown in the suggested users list. Users password will not return a value but instead will return null as 
+assigned.
+
+- If user is uploading a new cover or image photo, ensure that the new photo overrides the previous image to avoid increase the alloted space in Cloudinary storage.
