@@ -5,4 +5,5 @@
 - work on user notification if liked. NO notification if unliked**
 
 *FIX*
-- fix mongodb db collections to separate from other apps
+- fix mongodb db collections to separate from other apps 
+- image upload from cloudinary. selecting image from local storage is not working
