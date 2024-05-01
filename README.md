@@ -1,12 +1,12 @@
-# :dog::cat: X (Twitter) clone for dogs and cats
+# :dog:X (Twitter) clone for dogs and cats:cat:
 
-## :computer: Tech Stack: MERN with Tailwind (React.js, MongoDB, Node.js, Express, Tailwind)
+## :computer: Tech Stack: MERN with Tailwind
 
 :notebook: Features:
 
 - User authentication
 - React query for data fetching, caching, etc
-- Suggest users to follow
+- Suggested users to follow
 - Create, delete, comment and like posts
 - Edit profile info, profile image and cover image
 - Dynamic cloud image user upload

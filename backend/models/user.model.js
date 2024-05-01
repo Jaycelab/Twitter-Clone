@@ -58,10 +58,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    //empty arr for User likedPosts. Arr gets updated for each post liked or unliked
+    likedPosts: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post",
+        default: [],
+      },
+    ],
   },
 
   {
-    //member since july 2021 createdAt
+    //eg. member since july 2021 createdAt
     timestamps: true,
   }
 );

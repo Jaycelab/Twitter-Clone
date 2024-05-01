@@ -157,3 +157,127 @@ export const likeUnlikePost = async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+//GET POSTS
+
+export const getAllPosts = async (req, res) => {
+  try {
+    //find all posts from db and sort by newest first
+    //populate user field to get user details and exclude password with select -password
+    const posts = await Post.find()
+      .sort({ createdAt: -1 })
+      .populate({
+        path: "user",
+        select: "-password",
+      })
+
+      //populate comments field to get user details and exclude password with select -password
+      .populate({
+        path: "comments.user",
+        select: "-password",
+      });
+
+    if (posts.length === 0) {
+      return res.status(200).json([]);
+    }
+
+    res.status(200).json(posts);
+  } catch (error) {
+    console.log("Error in getAllPosts controller: ", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+//GET LIKED POSTS
+export const getLikedPosts = async (req, res) => {
+  //request user id from token
+  const userId = req.user._id;
+
+  try {
+    const user = await User.findById(userId);
+
+    //validate user
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    //find all posts that user has liked through post id
+    const likedPosts = await Post.find({
+      _id: { $in: user.likedPosts },
+    })
+      .populate({
+        path: "user",
+        select: "-password",
+      })
+      .populate({
+        path: "comments.user",
+        select: "-password",
+      });
+
+    res.status(200).json(likedPosts);
+  } catch (error) {
+    console.log("Error in getLikedPosts controller: ", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+//GET FOLLOWING POSTS
+export const getFollowingPosts = async (req, res) => {
+  try {
+    //validate user
+    const userId = req.user._id;
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ error: "User not found" });
+
+    //get following array from user model
+    const following = user.following;
+
+    //find all posts from users that user is following
+    //sort by newest first and populate user field to get user details and comments excluding password
+    const feedPosts = await Post.find({ user: { $in: following } })
+      .sort({
+        createdAt: -1,
+      })
+      .populate({
+        path: "user",
+        select: "-password",
+      })
+      .populate({
+        path: "comments.user",
+        select: "-password",
+      });
+
+    res.status(200).json(feedPosts);
+  } catch (error) {
+    console.log("Error in getFollowingPosts controller: ", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+//GET USER POSTS
+
+export const getUserPosts = async (req, res) => {
+  try {
+    const { username } = req.params;
+
+    const user = await User.findOne({ username });
+    if (!user) return res.status(404).json({ error: "User not found" });
+
+    //find all posts and comments from user and sort by newest first with password excluded
+    const posts = await Post.find({ user: user._id })
+      .sort({ createdAt: -1 })
+      .populate({
+        path: "user",
+        select: "-password",
+      })
+      .populate({
+        path: "comments.user",
+        select: "-password",
+      });
+
+    res.status(200).json(posts);
+  } catch (error) {
+    console.log("Error in getUserPosts controller: ", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
