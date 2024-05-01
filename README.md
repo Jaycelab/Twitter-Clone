@@ -1,8 +1,8 @@
-# X (twitter) clone for dogs and cats.
+# :dog: :cat: X (Twitter) clone for dogs and cats
 
-## Tech Stack: React.js, MongoDB, Node.js, Express, Tailwind
+## :computer: Tech Stack: MERN with Tailwind (React.js, MongoDB, Node.js, Express, Tailwind)
 
-Features:
+:notebook: Features:
 
 - User authentication
 - React query for data fetching, caching, etc
