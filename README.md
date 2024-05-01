@@ -1,4 +1,4 @@
-# :dog: :cat: X (Twitter) clone for dogs and cats
+# :dog::cat: X (Twitter) clone for dogs and cats
 
 ## :computer: Tech Stack: MERN with Tailwind (React.js, MongoDB, Node.js, Express, Tailwind)
 
