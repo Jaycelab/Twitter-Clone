@@ -1,4 +1,5 @@
 *TDL*
+- delete post, like/unlike post, comment on post
 - work on suggest profiles to follow (done)
 - finish updateUser function (done)
 - work on user notification if followed. NO notification if unfollowed (done)
