@@ -31,6 +31,7 @@ const notificationSchema = new mongoose.Schema(
   //timestamps is used to store the time of creation and updation of the notification
   { timestamps: true }
 );
+
 const Notification = mongoose.model("Notification", notificationSchema);
 
 export default Notification;

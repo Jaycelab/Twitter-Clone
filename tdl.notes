@@ -1,10 +1,11 @@
 *TDL*
-- Delete post
-- Like / Unlike post
-- Comment Post
-- Dynamic notification if liked/followed
+- Delete post (done)
+- Like / Unlike post (done)
+- Comment Post (done)
+- Dynamic notification if liked/followed (done)
 - User upload profile and cover image via cloud
 
 *FIX*
+- Notifcation if post is liked by user finished. Double check code**
 - fix mongodb db collections to separate from other apps 
 - image upload from cloudinary. selecting image from local storage is not working

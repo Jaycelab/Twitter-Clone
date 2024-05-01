@@ -10,3 +10,9 @@
 assigned.
 
 - If user is uploading a new cover or image photo, ensure that the new photo overrides the previous image to avoid increase the alloted space in Cloudinary storage.
+
+// Like and unlike
+- Like and unlike is implemented using the same logic as follow and unfollow. The only difference is that the like and unlike is done on posts.
+- The id of the user will be added to the likes array of the post and the id of the post will be added to the liked array of the user. 
+- Push will like and pull will unlike.
+- Notification will be sent to the user that created the post if the user likes the post. The notification will be stored in the notifications array of the user that created the post.
