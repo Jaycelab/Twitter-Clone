@@ -20,7 +20,7 @@ const SignUpPage = () => {
     password: "",
   });
 
-  //Submit Button
+  //Submit Button and update the form data / state
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
@@ -30,8 +30,10 @@ const SignUpPage = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  //displays error login message if true
   const isError = false;
 
+  //markup render with css classes
   return (
     <div className="max-w-screen-xl mx-auto flex h-screen px-10">
       <div className="flex-1 hidden lg:flex items-center  justify-center">
