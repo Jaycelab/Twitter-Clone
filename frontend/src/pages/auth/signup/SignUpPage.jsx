@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
+//USe State
 import { useState } from "react";
 
+//SVG Background Clone
 import XSvg from "../../../components/svgs/X";
 
+//React Icons
 import { MdOutlineMail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { MdPassword } from "react-icons/md";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 
+//Form Data
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -16,6 +20,7 @@ const SignUpPage = () => {
     password: "",
   });
 
+  //Submit Button
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
