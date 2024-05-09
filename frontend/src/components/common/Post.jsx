@@ -25,6 +25,7 @@ const Post = ({ post }) => {
 
   const handleLikePost = () => {};
 
+  //hover sudio class
   return (
     <>
       <div className="flex gap-2 items-start p-4 border-b border-gray-700">

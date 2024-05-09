@@ -1,12 +1,9 @@
 *TDL*
+- Review profile page code. Profile page does not reflect current user. 
+
 - Decide and check to keep delete notificiation or not****
-- Delete post (done)
-- Like / Unlike post (done)
-- Comment Post (done)
-- Dynamic notification if liked/followed (done)
 - User upload profile and cover image via cloud
 
 *FIX*
-- Notifcation if post is liked by user finished. Double check code**
-- fix mongodb db collections to separate from other apps 
+- Fix mongodb db collections to separate from other apps 
 - image upload from cloudinary. selecting image from local storage is not working

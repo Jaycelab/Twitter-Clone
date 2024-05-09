@@ -16,3 +16,6 @@ assigned.
 - The id of the user will be added to the likes array of the post and the id of the post will be added to the liked array of the user. 
 - Push will like and pull will unlike.
 - Notification will be sent to the user that created the post if the user likes the post. The notification will be stored in the notifications array of the user that created the post.
+
+//Notification
+-   className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"

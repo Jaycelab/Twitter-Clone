@@ -1,6 +1,6 @@
 # :dog:X (Twitter) clone for dogs and cats:cat:
 
-## :computer: Tech Stack: MERN with Tailwind
+## :computer: Tech Stack: MERN with Tailwind and DaisyUI
 
 :notebook: Features:
 
