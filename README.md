@@ -2,9 +2,9 @@
 
 # Preview
 
-![Preview Image 1](https://github.com/Jaycelab/X-MERN-Clone/blob/main/public/images/preview1.png)
-![Preview Image 2](https://github.com/Jaycelab/X-MERN-Clone/blob/main/public/images/preview2.png)
-![Preview Image 3](https://github.com/Jaycelab/X-MERN-Clone/blob/main/public/images/preview3.png)
+![Preview Image 1](https://github.com/Jaycelab/X-MERN-Clone/blob/main/frontend/public/images/preview1.png)
+![Preview Image 2](https://github.com/Jaycelab/X-MERN-Clone/blob/main/frontend/public/images/preview2.png)
+![Preview Image 3](https://github.com/Jaycelab/X-MERN-Clone/blob/main/frontend/public/images/preview3.png)
 
 ## :computer: Tech Stack: MERN with Tailwind and DaisyUI
 
