@@ -44,7 +44,7 @@ export const POSTS = [
   },
   {
     _id: "3",
-    text: "BUY THE FUCKING DIP!",
+    text: "BUY THE DIP!!🚀🚀",
 
     user: {
       username: "LunaTrades",

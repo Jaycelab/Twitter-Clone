@@ -29,7 +29,7 @@ const ProfilePage = () => {
     username: "ThatBoySpark",
     profileImg: "/avatars/dog2.jpg",
     coverImg: "/cover2.png",
-    bio: "If you are looking for a bad boy, my tweets may not be for you, cause I am a good boy.",
+    bio: "If you're looking for a bad boy, my tweets may not be for you, cause I'm a good boy.",
     link: "https://www.WheresMyDad.com",
     following: ["1", "2", "3"],
     followers: [
@@ -44,7 +44,6 @@ const ProfilePage = () => {
       "9",
       "10",
       "11",
-
       "12",
       "13",
       "14",
@@ -121,6 +120,26 @@ const ProfilePage = () => {
       "13",
       "14",
       "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
       "16",
       "17",
       "18",
@@ -247,12 +266,12 @@ const ProfilePage = () => {
                       <>
                         <FaLink className="w-3 h-3 text-slate-500" />
                         <a
-                          href="https://youtube.com/@asaprogrammer_"
+                          href="www.google.com"
                           target="_blank"
                           rel="noreferrer"
                           className="text-sm text-blue-500 hover:underline"
                         >
-                          www.feedme.com
+                          www.IMissMyDad.com
                         </a>
                       </>
                     </div>
