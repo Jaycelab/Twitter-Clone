@@ -1,4 +1,6 @@
-# :dog:X (Twitter) clone for dogs and cats:cat:
+<div align="center">
+
+# :dog X (Twitter) clone for dogs and cats :cat:
 
 # Preview
 
@@ -17,3 +19,4 @@
 - Edit profile info, profile image and cover image
 - Dynamic cloud image user upload
 - Alert notifications
+</div>
