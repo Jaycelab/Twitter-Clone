@@ -7,3 +7,4 @@
 *FIX*
 - Fix mongodb db collections to separate from other apps 
 - image upload from cloudinary. selecting image from local storage is not working
+ test
