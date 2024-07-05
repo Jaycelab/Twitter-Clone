@@ -2,7 +2,7 @@
 
 # :dog: X (Twitter) clone for dogs and cats :cat:
 
-## Preview
+## Work in progress preview link found [here](https://x-mern-clone.vercel.app//) 👷.
 
 ![Preview Image 1](https://github.com/Jaycelab/X-MERN-Clone/blob/main/frontend/public/images/preview1.png)
 ![Preview Image 2](https://github.com/Jaycelab/X-MERN-Clone/blob/main/frontend/public/images/preview2.png)
