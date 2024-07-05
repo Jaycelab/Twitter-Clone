@@ -13,6 +13,10 @@ module.exports = {
   plugins: ["react-refresh"],
   rules: {
     "react/jsx-no-target-blank": "off",
+    "react/no-unescaped-entities": "off",
+    quotes: [0],
+    avoidEscape: 0,
+    allowTemplateLiterals: 0,
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
